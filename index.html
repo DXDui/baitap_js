@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Flowbite -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Bài tập JS</title>
+  </head>
+  <body>
+    <div class="min-h-screen bg-gray-100 p-4 sm:p-8 dark:bg-gray-950">
+      <div class="mx-auto max-w-6xl">
+        <!-- Vertical Tabs -->
+        <div
+          class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900"
+        >
+          <div class="md:flex">
+            <!-- Sidebar -->
+            <aside
+              class="border-b border-gray-200 bg-gray-50 p-4 md:w-64 md:shrink-0 md:border-b-0 md:border-r md:border-gray-200 dark:border-gray-800 dark:bg-gray-900"
+            >
+              <ul
+                class="flex flex-col gap-2 text-sm font-medium"
+                id="vertical-tab"
+                data-tabs-toggle="#vertical-tab-content"
+                data-tabs-active-classes="text-blue-700 bg-blue-50 dark:bg-blue-500/10 dark:text-blue-400"
+                data-tabs-inactive-classes="text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+                role="tablist"
+              >
+                <!-- Bài 1 -->
+                <li role="presentation">
+                  <button
+                    id="bai1-tab"
+                    data-tabs-target="#bai1"
+                    type="button"
+                    role="tab"
+                    aria-controls="bai1"
+                    aria-selected="true"
+                    class="group inline-flex w-full items-center gap-3 rounded-xl bg-blue-50 px-4 py-3 text-left text-blue-700 transition-all duration-200 dark:bg-blue-500/10 dark:text-blue-400"
+                  >
+                    <span>Bài 1</span>
+                  </button>
+                </li>
+
+                <!-- Bài 2 -->
+                <li role="presentation">
+                  <button
+                    id="bai2-tab"
+                    data-tabs-target="#bai2"
+                    type="button"
+                    role="tab"
+                    aria-controls="bai2"
+                    aria-selected="false"
+                    class="group inline-flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-gray-600 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+                  >
+                    <span>Bài 2</span>
+                  </button>
+                </li>
+
+                <!-- Bài 3 -->
+                <li role="presentation">
+                  <button
+                    id="bai3-tab"
+                    data-tabs-target="#bai3"
+                    type="button"
+                    role="tab"
+                    aria-controls="bai3"
+                    aria-selected="false"
+                    class="group inline-flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-gray-600 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+                  >
+                    <span>Bài 3</span>
+                  </button>
+                </li>
+
+                <!-- Bài 4 -->
+                <li role="presentation">
+                  <button
+                    id="bai4-tab"
+                    data-tabs-target="#bai4"
+                    type="button"
+                    role="tab"
+                    aria-controls="bai4"
+                    aria-selected="false"
+                    class="group inline-flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-gray-600 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+                  >
+                    <span>Bài 4</span>
+                  </button>
+                </li>
+
+                <!-- Bài 5 -->
+                <li role="presentation">
+                  <button
+                    id="bai5-tab"
+                    data-tabs-target="#bai5"
+                    type="button"
+                    role="tab"
+                    aria-controls="bai5"
+                    aria-selected="false"
+                    class="group inline-flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-gray-600 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+                  >
+                    <span>Bài 5</span>
+                  </button>
+                </li>
+              </ul>
+            </aside>
+
+            <!-- Main content -->
+            <main class="min-w-0 flex-1 p-5 sm:p-8">
+              <div id="vertical-tab-content">
+                <!-- bai1 -->
+                <section id="bai1" role="tabpanel" aria-labelledby="bai1-tab">
+                  <div class="mb-6 flex items-start justify-between gap-4">
+                    <div>
+                      <h2
+                        class="mt-1 text-2xl font-bold tracking-tight text-red-500"
+                      >
+                        Bài 1: Tính tiền lương nhân viên
+                      </h2>
+                      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                        Lương 1 ngày: 100.000<br />
+                        Cho ng dùng nhập vào số ngày làm.<br />
+                        Công thức: Lương 1 ngày * số ngày làm
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 dark:border-gray-800 dark:bg-gray-950"
+                  >
+                    <div class="flex justify-between items-center">
+                      <div>
+                        <span>Lương 1 ngày:</span>
+                        <input
+                          id="luongNgay"
+                          type="number"
+                          placeholder="Nhap luong"
+                          value="100000"
+                          disabled
+                        />
+                      </div>
+                      <div>
+                        <span>Số ngày làm:</span>
+                        <input
+                          id="ngayLamviec"
+                          type="number"
+                          placeholder="Nhap ngay"
+                          min="0"
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      class="mt-6 flex justify-between border-t border-gray-100 pt-5 dark:border-gray-800"
+                    >
+                      <div class="bg-green-300">
+                        <span>Lương nhận:</span>
+                        <input id="luongNhan" />
+                      </div>
+
+                      <button
+                        type="button"
+                        id="btnTinhLuongBai1"
+                        class="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900"
+                      >
+                        Tính lương
+                      </button>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- bai2 -->
+                <section
+                  id="bai2"
+                  class="hidden"
+                  role="tabpanel"
+                  aria-labelledby="bai2-tab"
+                >
+                  <div class="mb-6 flex items-start justify-between gap-4">
+                    <div>
+                      <h2
+                        class="mt-1 text-2xl font-bold tracking-tight text-red-500"
+                      >
+                        Bài 2: Tính giá trị trung bình
+                      </h2>
+                      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                        Nhập 5 số thực
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 dark:border-gray-800 dark:bg-gray-950"
+                  >
+                    <div class="flex flex-wrap justify-between gap-2">
+                      <input
+                        id="sothu1"
+                        type="number"
+                        placeholder="Số thứ 1"
+                        class="w-32 rounded border p-2"
+                      />
+
+                      <input
+                        id="sothu2"
+                        type="number"
+                        placeholder="Số thứ 2"
+                        class="w-32 rounded border p-2"
+                      />
+
+                      <input
+                        id="sothu3"
+                        type="number"
+                        placeholder="Số thứ 3"
+                        class="w-32 rounded border p-2"
+                      />
+
+                      <input
+                        id="sothu4"
+                        type="number"
+                        placeholder="Số thứ 4"
+                        class="w-32 rounded border p-2"
+                      />
+
+                      <input
+                        id="sothu5"
+                        type="number"
+                        placeholder="Số thứ 5"
+                        class="w-32 rounded border p-2"
+                      />
+                    </div>
+
+                    <div
+                      class="mt-6 flex justify-between border-t border-gray-100 pt-5 dark:border-gray-800"
+                    >
+                      <div class="bg-green-300">
+                        <span>Giá trị trung bình:</span>
+                        <input id="resultBai2" />
+                      </div>
+
+                      <button
+                        type="button"
+                        id="btnBai2"
+                        class="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900"
+                      >
+                        Tính trung bình
+                      </button>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- bai3 -->
+                <section
+                  id="bai3"
+                  class="hidden"
+                  role="tabpanel"
+                  aria-labelledby="bai3-tab"
+                >
+                  <div class="mb-6 flex items-start justify-between gap-4">
+                    <div>
+                      <h2
+                        class="mt-1 text-2xl font-bold tracking-tight text-red-500"
+                      >
+                        Bài 3: Quy đổi tiền
+                      </h2>
+                      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                        Giá USD: 23.500 VND<br />
+                        Quy đổi từ USD sang VND <br />
+                        Nhập tiền USD<br />
+                        Tính và xuất ra tiền sau quy đổi VND
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 dark:border-gray-800 dark:bg-gray-950"
+                  >
+                    <div class="flex flex-wrap justify-between gap-2">
+                      <input
+                        id="inputUSD"
+                        type="number"
+                        placeholder="Nhập số tiền USD"
+                        min="0"
+                      />
+                    </div>
+
+                    <div
+                      class="mt-6 flex justify-between border-t border-gray-100 pt-5 dark:border-gray-800"
+                    >
+                      <div class="bg-green-300">
+                        <span>Giá trị sau quy đổi:</span>
+                        <input id="resultBai3" />
+                      </div>
+
+                      <button
+                        type="button"
+                        id="btnBai3"
+                        class="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900"
+                      >
+                        Quy đổi
+                      </button>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- bai4 -->
+                <section
+                  id="bai4"
+                  class="hidden"
+                  role="tabpanel"
+                  aria-labelledby="bai4-tab"
+                >
+                  <div class="mb-6 flex items-start justify-between gap-4">
+                    <div>
+                      <h2
+                        class="mt-1 text-2xl font-bold tracking-tight text-red-500"
+                      >
+                        Bài 4: Tính diện tích, chu vi hình chữ nhật
+                      </h2>
+                      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                        Nhập chiều dài và chiều rộng<br />
+                        Tính và xuất ra diện tích, chu vi của HCN<br />
+                        Công thức:<br />
+                        - Diện tích = dài * rộng<br />
+                        - Chu vi = (dài + rộng) * 2
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 dark:border-gray-800 dark:bg-gray-950"
+                  >
+                    <div class="flex flex-wrap justify-between gap-2">
+                      <input
+                        id="inputChieuDai"
+                        type="number"
+                        placeholder="Nhập chiều dài"
+                        min="1"
+                      />
+                      <input
+                        id="inputChieuRong"
+                        type="number"
+                        placeholder="Nhập chiều rộng"
+                        min="1"
+                      />
+                    </div>
+
+                    <div
+                      class="mt-6 flex justify-between border-t border-gray-100 pt-5 dark:border-gray-800"
+                    >
+                      <div class="bg-green-300">
+                        <span>Diện tích:</span>
+                        <input id="resultBai4DT" />
+                      </div>
+                      <div class="bg-green-300">
+                        <span>Chu vi:</span>
+                        <input id="resultBai4CV" />
+                      </div>
+
+                      <button
+                        type="button"
+                        id="btnBai4"
+                        class="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900"
+                      >
+                        Tính
+                      </button>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- bai5 -->
+                <section
+                  id="bai5"
+                  class="hidden"
+                  role="tabpanel"
+                  aria-labelledby="bai5-tab"
+                >
+                  <div class="mb-6 flex items-start justify-between gap-4">
+                    <div>
+                      <h2
+                        class="mt-1 text-2xl font-bold tracking-tight text-red-500"
+                      >
+                        Bài 4: Tính diện tích, chu vi hình chữ nhật
+                      </h2>
+                      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                        Nhập 1 số có 2 chữ số (VD: 12, 44, 83)<br />
+                        Tính tổng 2 ký số<br />
+                        Ví dụ:<br />
+                        - 12 => Tổng là 1 + 2 = 3
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 dark:border-gray-800 dark:bg-gray-950"
+                  >
+                    <div class="flex flex-wrap justify-between gap-2">
+                      <input
+                        id="inputSo2Chuso"
+                        type="number"
+                        placeholder="Nhập số có 2 chữ số. VD: 10"
+                        min="10"
+                        max="99"
+                      />
+                    </div>
+
+                    <div
+                      class="mt-6 flex justify-between border-t border-gray-100 pt-5 dark:border-gray-800"
+                    >
+                      <div class="bg-green-300">
+                        <span>Đáp án:</span>
+                        <input id="resultBai5" />
+                      </div>
+
+                      <button
+                        type="button"
+                        id="btnBai5"
+                        class="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900"
+                      >
+                        Tính tổng
+                      </button>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+    <!-- DOM JS -->
+    <script src="/dom.js"></script>
+  </body>
+</html>
